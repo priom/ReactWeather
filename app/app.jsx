@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 import Main from 'Main';
+import Nav from 'Nav';
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -9,6 +10,5 @@ ReactDOM.render(
       
     </Route>
   </Router>,
-
   document.getElementById('app')
 );

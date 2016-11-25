@@ -60,6 +60,10 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
+	var _Nav = __webpack_require__(234);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
@@ -26390,20 +26394,54 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Nav = __webpack_require__(234);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Main = _react2.default.createClass({
 	    displayName: 'Main',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'h2',
+	            'div',
 	            null,
-	            'Main'
+	            _react2.default.createElement(_Nav2.default, null),
+	            _react2.default.createElement(
+	                'h2',
+	                null,
+	                'Main'
+	            )
 	        );
 	    }
 	});
 
 	module.exports = Main;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Nav = _react2.default.createClass({
+	    displayName: 'Nav',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Nav'
+	        );
+	    }
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);

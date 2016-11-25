@@ -1,9 +1,13 @@
 import React from 'react';
+import Nav from 'Nav';
 
 const Main = React.createClass ({
     render () {
         return (
-            <h2>Main</h2>
+            <div>
+                <Nav></Nav>
+                <h2>Main</h2>
+            </div>
         );
     }
 });
