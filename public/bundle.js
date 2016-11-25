@@ -60,16 +60,30 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Nav = __webpack_require__(234);
+	var _Weather = __webpack_require__(235);
 
-	var _Nav2 = _interopRequireDefault(_Nav);
+	var _Weather2 = _interopRequireDefault(_Weather);
+
+	var _About = __webpack_require__(236);
+
+	var _About2 = _interopRequireDefault(_About);
+
+	var _Examples = __webpack_require__(237);
+
+	var _Examples2 = _interopRequireDefault(_Examples);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.hashHistory },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Main2.default })
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _Main2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: 'About', component: _About2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'Examples', component: _Examples2.default }),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Weather2.default })
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -26411,7 +26425,8 @@
 	                'h2',
 	                null,
 	                'Main'
-	            )
+	            ),
+	            this.props.children
 	        );
 	    }
 	});
@@ -26428,20 +26443,116 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(178);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Nav = _react2.default.createClass({
 	    displayName: 'Nav',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'h1',
+	            'div',
 	            null,
-	            'Nav'
+	            _react2.default.createElement(
+	                'h1',
+	                null,
+	                'Nav'
+	            ),
+	            _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/' },
+	                'Get Weather'
+	            ),
+	            _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/about' },
+	                'About'
+	            ),
+	            _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/examples' },
+	                'Examples'
+	            )
 	        );
 	    }
 	});
 
 	module.exports = Nav;
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Weather = _react2.default.createClass({
+	    displayName: 'Weather',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Weather'
+	        );
+	    }
+	});
+
+	module.exports = Weather;
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var About = _react2.default.createClass({
+	    displayName: 'About',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h3',
+	            null,
+	            'About'
+	        );
+	    }
+	});
+
+	module.exports = About;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Examples = _react2.default.createClass({
+	    displayName: 'Examples',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Examples'
+	        );
+	    }
+	});
+
+	module.exports = Examples;
 
 /***/ }
 /******/ ]);
