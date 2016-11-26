@@ -64,11 +64,11 @@
 
 	var _Weather2 = _interopRequireDefault(_Weather);
 
-	var _About = __webpack_require__(236);
+	var _About = __webpack_require__(238);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Examples = __webpack_require__(237);
+	var _Examples = __webpack_require__(239);
 
 	var _Examples2 = _interopRequireDefault(_Examples);
 
@@ -26459,18 +26459,18 @@
 	                'Nav'
 	            ),
 	            _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/' },
+	                _reactRouter.IndexLink,
+	                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	                'Get Weather'
 	            ),
 	            _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/about' },
+	                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	                'About'
 	            ),
 	            _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/examples' },
+	                { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	                'Examples'
 	            )
 	        );
@@ -26489,15 +26489,29 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _WeatherForm = __webpack_require__(236);
+
+	var _WeatherForm2 = _interopRequireDefault(_WeatherForm);
+
+	var _WeatherMessage = __webpack_require__(237);
+
+	var _WeatherMessage2 = _interopRequireDefault(_WeatherMessage);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Weather = _react2.default.createClass({
 	    displayName: 'Weather',
 	    render: function render() {
 	        return _react2.default.createElement(
-	            'h3',
+	            'div',
 	            null,
-	            'Weather'
+	            _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Weather'
+	            ),
+	            _react2.default.createElement(_WeatherForm2.default, null),
+	            _react2.default.createElement(_WeatherMessage2.default, null)
 	        );
 	    }
 	});
@@ -26506,6 +26520,65 @@
 
 /***/ },
 /* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherForm = _react2.default.createClass({
+	    displayName: "WeatherForm",
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            null,
+	            _react2.default.createElement(
+	                "form",
+	                null,
+	                _react2.default.createElement("input", { type: "text" }),
+	                _react2.default.createElement(
+	                    "button",
+	                    null,
+	                    "Get Weather"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = WeatherForm;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var WeatherMessage = _react2.default.createClass({
+	    displayName: 'WeatherMessage',
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'h3',
+	            null,
+	            'It\'s -10 here'
+	        );
+	    }
+	});
+
+	module.exports = WeatherMessage;
+
+/***/ },
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26530,7 +26603,7 @@
 	module.exports = About;
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

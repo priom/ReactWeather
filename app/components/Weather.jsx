@@ -1,9 +1,15 @@
 import React from 'react';
+import WeatherForm from 'WeatherForm';
+import WeatherMessage from 'WeatherMessage';
 
 const Weather = React.createClass({
     render() {
         return (
-            <h3>Weather</h3>
+            <div>
+                <h3>Weather</h3>
+                <WeatherForm></WeatherForm>
+                <WeatherMessage></WeatherMessage>
+            </div>
        )
    } 
 });
