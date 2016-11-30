@@ -26501,7 +26501,25 @@
 
 	var Weather = _react2.default.createClass({
 	    displayName: 'Weather',
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            location: 'Toronto',
+	            temp: -20
+	        };
+	    },
+	    handleSearch: function handleSearch(location) {
+	        this.setState({
+	            location: location,
+	            temp: 25
+	        });
+	    },
 	    render: function render() {
+	        var _state = this.state,
+	            temp = _state.temp,
+	            location = _state.location;
+
+
 	        return _react2.default.createElement(
 	            'div',
 	            null,
@@ -26510,8 +26528,8 @@
 	                null,
 	                'Weather'
 	            ),
-	            _react2.default.createElement(_WeatherForm2.default, null),
-	            _react2.default.createElement(_WeatherMessage2.default, null)
+	            _react2.default.createElement(_WeatherForm2.default, { onSearch: this.handleSearch }),
+	            _react2.default.createElement(_WeatherMessage2.default, { temp: temp, location: location })
 	        );
 	    }
 	});
@@ -26522,7 +26540,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _react = __webpack_require__(1);
 
@@ -26531,19 +26549,31 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var WeatherForm = _react2.default.createClass({
-	    displayName: "WeatherForm",
+	    displayName: 'WeatherForm',
+
+	    onFormSubmit: function onFormSubmit(e) {
+	        e.preventDefault();
+	        var location = this.refs.location.value;
+
+	        if (location.length > 0) {
+	            this.refs.location.value = '';
+	            this.props.onSearch(location);
+	        } else {
+	            alert('Enter a city!');
+	        }
+	    },
 	    render: function render() {
 	        return _react2.default.createElement(
-	            "div",
+	            'div',
 	            null,
 	            _react2.default.createElement(
-	                "form",
-	                null,
-	                _react2.default.createElement("input", { type: "text" }),
+	                'form',
+	                { onSubmit: this.onFormSubmit },
+	                _react2.default.createElement('input', { type: 'text', ref: 'location' }),
 	                _react2.default.createElement(
-	                    "button",
+	                    'button',
 	                    null,
-	                    "Get Weather"
+	                    'Get Weather'
 	                )
 	            )
 	        );
@@ -26567,10 +26597,18 @@
 	var WeatherMessage = _react2.default.createClass({
 	    displayName: 'WeatherMessage',
 	    render: function render() {
+	        var _props = this.props,
+	            temp = _props.temp,
+	            location = _props.location;
+
+
 	        return _react2.default.createElement(
 	            'h3',
 	            null,
-	            'It\'s -10 here'
+	            'It\'s ',
+	            temp,
+	            ' in ',
+	            location
 	        );
 	    }
 	});
