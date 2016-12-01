@@ -1,6 +1,6 @@
 # ReactWeather
 
-Built with Javascript ES6, ReactJS, Axios, OpenWeather API.  
+Built with Javascript ES6, ReactJS JSX, Axios, OpenWeather API.  
 
 1. Git clone the project  
 2. Do npm install  
