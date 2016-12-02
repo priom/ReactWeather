@@ -1,6 +1,6 @@
 # ReactWeather
 
-Built with Javascript ES6, ReactJS JSX, Axios, OpenWeather API and deployed to Heroku.  
+Built with Javascript ES6, ReactJS, Foundation 6, Webpack, Axios, OpenWeather API and deployed to Heroku.  
 
 1. Git clone the project  
 2. Do npm install  
