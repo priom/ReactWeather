@@ -7,6 +7,6 @@ const About = () => {
             <p>Built by PrioM</p>
         </div>
     );
-}
+};
 
 module.exports = About;
